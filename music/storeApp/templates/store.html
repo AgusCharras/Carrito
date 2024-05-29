@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Catalog</h1>
+    <div class="catalog">
+
+        {% for product in products %}
+            <div class="item-card">
+                <img src="{{ product.albumImage.url }}" alt="album image">
+                <h2>{{ product.name }}</h2>
+                <h4>{{ product.description }}</h4>
+                <h3>{{ product.aggregate }}</h3>
+
+                <div class="btn-container">
+                    <a href="{% url 'Add' product.id %}">
+                        <button class="cart-btn">
+                            <span class="material-icons">
+                                add_shopping_cart
+                            </span>
+                            <p>
+                                añadir
+                            </p>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+
+            <div>
+                {% include "cart.html" %}
+            </div>
+
+    </div>
+
+{% endblock %}
+

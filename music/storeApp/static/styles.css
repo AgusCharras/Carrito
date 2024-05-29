@@ -1,0 +1,14 @@
+
+.catalog{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.item-card{
+    height: 33rem;
+    width: 20rem;
+}
+
+.item-card img{
+    width: 100%;
+}
